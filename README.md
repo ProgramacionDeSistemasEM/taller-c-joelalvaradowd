@@ -8,7 +8,7 @@ Compile the main.c file with the name of your choice.
 gcc -Wall main.c -o imc
 ```
 
-##Introduction
+## Introduction
 
 In this workshop you will write a small program in C, in order to become familiar with the syntax.
 
