@@ -25,10 +25,36 @@ int main(int argc, char **argv){
 	//Puede declarar más variables si lo necesita.
 	float sum = 0.0f;
 	float max_imc = 0.0f;
-	
-	
-	
-	
+
+	if(elementos<=0){
+		printf("Numero de personas invalido\n");
+		exit(1);
+	}
+	float arreglo[elementos];
+	for(int i=0; i<elementos; i++){
+		float peso, altura;
+		printf("Peso: ");
+		scanf("%f",&peso);
+		if(peso<0){
+			printf("Numero invalido\n");
+			exit(1);
+		}
+		printf("Altura: ");
+		scanf("%f",&altura);
+		if(altura<0){
+			printf("Numero invalido\n");
+			exit(1);
+		}
+		float imc = peso/(altura*altura);
+		arreglo[i]=imc;
+	}
+	for(int j=0; j<elementos; j++){
+		sum += arreglo[j];
+		if(arreglo[j] > max_imc){
+			max_imc = arreglo[j];
+		}
+	}
+	sum = sum/elementos;
 	//No modifique estas lineas
 	//Guarde los resultados en las 
 	//variables sum y max_imc
